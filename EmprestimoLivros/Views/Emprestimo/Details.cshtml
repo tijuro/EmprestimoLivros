@@ -1,0 +1,50 @@
+﻿@model EmprestimosModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container bg-warning p-5 rounded-5">
+
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Detalhe do Empréstimo</h1>
+    </div>
+
+    <form method="get" asp-controller="Emprestimo" asp-action="Details">
+
+        <input type="hidden" asp-for=Id />
+        <div class="mb-3">
+            <label for="Recebedor" class="form-label text-light ">Recebedor</label>
+            <input type="text" class="form-control text-dark " asp-for="Recebedor" id="Recebedor" disabled>
+            <span class="text-danger" asp-validation-for="Recebedor"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="Fornecedor" class="form-label text-light ">Fornecedor</label>
+            <input type="text" class="form-control text-dark " asp-for="Fornecedor" id="Fornecedor" disabled>
+            <span class="text-danger" asp-validation-for="Fornecedor"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="Livro" class="form-label text-light ">Livro</label>
+            <input type="text" class="form-control text-dark " asp-for="LivroEmprestado" id="Livro" disabled>
+            <span class="text-danger" asp-validation-for="LivroEmprestado"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="DataUltimaAtualizacao" class="form-label text-light ">Data Última Atualização</label>
+            <input type="text" class="form-control text-dark " asp-for="DataUltimaAtualizacao" id="DataUltimaAtualizacao"  disabled>
+            <span class="text-danger" asp-validation-for="DataUltimaAtualizacao"></span>
+        </div>
+
+        <div class="d-flex gap-5 mt-5 text-center">
+            <a class="btn btn-success w-50" asp-controller="Emprestimo" asp-action="Cadastrar"><i class="bi bi-file-earmark-plus mx-2"></i>Cadastrar novo empréstimo</a>
+            <a class="btn btn-primary w-50" asp-controller="Emprestimo" asp-action="Index">Voltar</a>          
+        </div>
+
+    </form>
+</div>
+
